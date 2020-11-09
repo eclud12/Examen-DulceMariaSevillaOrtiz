@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('clientes', 'ClienteController');
+  //  Route::apiResource('clientes', 'ClienteController@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('facturas', 'FacturaController');
+  //  Route::apiResource('facturas', 'FacturaController@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('productos', 'ProductoController');
+  //  Route::apiResource('productos', 'ProductoController@store');
+});
+
+Route::group(['prefix'=>'api'], function(){
+    Route::apiResource('detallefacturas', 'DetallefacturaController');
+  //  Route::apiResource('detallefacturas', 'DetallefacturaController@store');
+});
